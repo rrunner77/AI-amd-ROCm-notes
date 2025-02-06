@@ -1,0 +1,11 @@
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+cd stable-diffusion-webui
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
+cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
+cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
+# not needed in case of WSL - does not work as the libraries can initiate constexpr index_t M0 = kMPerBlock / (M1 * M2) Most probably this function does not work: composable_kernel_tiled/include/ck_tile/ops/fmha/pipeline/block_fmha_bwd_pipeline_default_policy_hip.hpp:596:27: error: constexpr variable 'M0' must be initialized by a constant expression.
+# I assume that this 
+pip install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
