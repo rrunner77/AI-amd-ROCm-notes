@@ -15,8 +15,8 @@ Installation of Automatic1111 with ROCm on a WSL2 Windows 11 - for now no xforme
 10. TORCH_COMMAND='pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/' python launch.py --precision full --no-half --skip-torch-cuda-test
 11. It will not work but install all the prerequisites. 
 12. You need to copy the ROCm to the venv environment: https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/wsl/install-pytorch.html -> point 4
-13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 <venv path>/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
-14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 <venv path>/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
+13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
+14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
 15. cd stable-diffusion-webui
 16. source venv/bin/activate
 17. TORCH_COMMAND='pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/' python launch.py --precision full --no-half
