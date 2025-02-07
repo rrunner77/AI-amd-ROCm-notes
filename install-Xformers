@@ -1,11 +1,22 @@
-git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
-cd stable-diffusion-webui
-python -m venv venv
-source venv/bin/activate
-pip install --upgrade pip wheel
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
-cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
-cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
-# not needed in case of WSL - does not work as the libraries can initiate constexpr index_t M0 = kMPerBlock / (M1 * M2) Most probably this function does not work: composable_kernel_tiled/include/ck_tile/ops/fmha/pipeline/block_fmha_bwd_pipeline_default_policy_hip.hpp:596:27: error: constexpr variable 'M0' must be initialized by a constant expression.
-# I assume that this 
-pip install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
+1.  Need to install on W11 the WSL2 Ubuntu(should be the 24.04 by default) - Should work via Microsoft store
+2.  install python 3.10.16 - I installed from deadsnakes (installed all packgages like "sudo apt install python3.10*")
+3.  install ROCm -> https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/wsl/install-radeon.html - I have tested only the latest version of ROCm 6.3.2
+	- wget https://repo.radeon.com/amdgpu-install/6.3.2/ubuntu/noble/amdgpu-install_6.3.60302-1_all.deb
+	- sudo apt install ./amdgpu-install_6.3.60302-1_all.deb
+	- sudo amdgpu-install --list-usecase
+	- amdgpu-install -y --usecase=wsl,rocm --no-dkms
+	- to check if it is working: "rocminfo"
+4.  You need to restart the WLS2 -> "sudo reboot"
+5.  cd ~
+5.  git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+6.  cd stable-diffusion-webui
+7.  python3.10 -m venv venv
+8.  source venv/bin/activate
+9.  python3.10 -m pip install --upgrade pip wheel
+10. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
+12. pip3.10 install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
+13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
+14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
+15. python3.10 launch.py --precision full --no-half --xformers --listen
+16. netsh interface portproxy set v4tov4 listenport=7860 listenaddress=127.0.0.1 connectport=7860 connectaddress=<ip address of WSL you can get it by "ifconfig">
+17. http://127.0.0.1:7860
