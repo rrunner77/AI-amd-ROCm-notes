@@ -25,7 +25,7 @@ RAM 64GB
 8. python3.10 -m venv venv
 9. source venv/bin/activate
 10. python3.10 -m pip install --upgrade pip wheel
-11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
+11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocmexport HIP_VISIBLE_DEVICES=06.3/
 12. Optional as A1111 does not work with xformers for ROCm -> pip3.10 install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
       - you can test xformers by "python -m xformers.info"
 
@@ -33,9 +33,11 @@ pip3.10 install -v -U git+https://github.com/ROCm/xformers@for_upstream - from R
 
 13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
 14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
-15. python3.10 launch.py --precision full --no-half --listen (do not use --xformers as it will not work)
-16. netsh interface portproxy set v4tov4 listenport=7860 listenaddress=127.0.0.1 connectport=7860 connectaddress=<ip address of WSL you can get it by "ifconfig">
-18. http://127.0.0.1:7860
+15. export HIP_VISIBLE_DEVICES=0
+16. export HSA_OVERRIDE_GFX_VERSION=11.0.0  
+17. python3.10 launch.py --no-half-vae --listen (do not use --xformers as it will not work)
+18. netsh interface portproxy set v4tov4 listenport=7860 listenaddress=127.0.0.1 connectport=7860 connectaddress=<ip address of WSL you can get it by "ifconfig">
+19. http://127.0.0.1:7860
 
 Also Training is working. I am a noob on that. I tested only to create my first embedding.
 
