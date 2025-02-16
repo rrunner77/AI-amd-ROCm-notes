@@ -25,7 +25,7 @@ RAM 64GB
 8. python3.10 -m venv venv
 9. source venv/bin/activate
 10. python3.10 -m pip install --upgrade pip wheel
-11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocmexport6.3/
+11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
 12. Optional as A1111 does not work with xformers for ROCm -> pip3.10 install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
       - you can test xformers by "python -m xformers.info"
 
