@@ -28,14 +28,20 @@ RAM 64GB
 11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
 12. Optional as A1111 does not work with xformers for ROCm -> pip3.10 install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
       - you can test xformers by "python -m xformers.info"
+    Last version for ROCm pip3.10 install -v -U git+https://github.com/ROCm/xformers@develop - from ROCm page
 
-pip3.10 install -v -U git+https://github.com/ROCm/xformers@for_upstream - from ROCm page
-
+----------
+This 2 steps only for WLS2
+----------
 13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
 14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
+----------
+This 2 steps work only on Ubuntu
+----------
 15. export HIP_VISIBLE_DEVICES=0
-16. export HSA_OVERRIDE_GFX_VERSION=11.0.0  
-17. python3.10 launch.py --no-half-vae --listen (do not use --xformers as it will not work)
+16. export HSA_OVERRIDE_GFX_VERSION=11.0.0
+----------
+17. python3.10 launch.py --no-half-vae --listen --opt-sdp-attention (do not use --xformers as it will not work)
 18. netsh interface portproxy set v4tov4 listenport=7860 listenaddress=127.0.0.1 connectport=7860 connectaddress=<ip address of WSL you can get it by "ifconfig">
 19. http://127.0.0.1:7860
 
