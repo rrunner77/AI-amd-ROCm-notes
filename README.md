@@ -33,8 +33,8 @@ RAM 64GB
 ----------
 This 2 steps only for WLS2
 ----------
-13. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
-14. cp /opt/rocm/lib/libhsa-runtime64.so.1.14.0 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
+13. cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60401 venv/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
+14. cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60401 venv/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
 ----------
 This 2 steps work only on Ubuntu
 ----------
