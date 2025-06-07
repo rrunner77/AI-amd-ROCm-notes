@@ -13,7 +13,7 @@ RAM 64GB
     - sudo add-apt-repository ppa:deadsnakes/ppa  - or if you are too scared to use this repo you can compile from source.
     - sudo apt install python3.10*
 3. install ROCm -> https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/wsl/install-radeon.html - I have tested only the latest version of ROCm 6.3.2
-4. wget https://repo.radeon.com/amdgpu-install/6.3.2/ubuntu/noble/amdgpu-install_6.3.60302-1_all.deb
+4. wget https://repo.radeon.com/amdgpu-install/6.4.1/ubuntu/noble/amdgpu-install_6.4.60401-1_all.deb
     - sudo apt install ./amdgpu-install_6.3.60302-1_all.deb
     - sudo amdgpu-install --list-usecase
     - amdgpu-install -y --usecase=wsl,rocm --no-dkms
@@ -25,7 +25,7 @@ RAM 64GB
 8. python3.10 -m venv venv
 9. source venv/bin/activate
 10. python3.10 -m pip install --upgrade pip wheel
-11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
+11. pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4/
 12. Optional as A1111 does not work with xformers for ROCm -> pip3.10 install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
       - you can test xformers by "python -m xformers.info"
     Last version for ROCm pip3.10 install -v -U git+https://github.com/ROCm/xformers@develop - from ROCm page
