@@ -13,8 +13,8 @@ RAM 64GB
     - sudo add-apt-repository ppa:deadsnakes/ppa  - or if you are too scared to use this repo you can compile from source.
     - sudo apt install python3.10*
 3. install ROCm -> https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/wsl/install-radeon.html - I have tested only the latest version of ROCm 6.3.2
-4. wget https://repo.radeon.com/amdgpu-install/6.4.1/ubuntu/noble/amdgpu-install_6.4.60401-1_all.deb
-    - sudo apt install ./amdgpu-install_6.3.60302-1_all.deb
+4. wget https://repo.radeon.com/amdgpu-install/6.4.2.1/ubuntu/noble/amdgpu-install_6.4.60402-1_all.deb
+    - sudo apt install ./amdgpu-install_6.4.60402-1_all.deb
     - sudo amdgpu-install --list-usecase
     - amdgpu-install -y --usecase=wsl,rocm --no-dkms
     - to check if it is working: "rocminfo"
