@@ -12,7 +12,9 @@
 - python3.10 -m venv comfy-env
 - python3.10 -m pip install --upgrade pip wheel
 - pip3.10 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4/
+- python3.10 main.py --listen --use-pytorch-cross-attention
+
 On WLS:
 - cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60402 comfy-env/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
 - cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60402 comfy-env/lib/python3.10/site-packages/triton/backends/amd/lib/libhsa-runtime64.so
-- python3.10 main.py --listen --use-pytorch-cross-attention
+- netsh interface portproxy set v4tov4 listenport=7860 listenaddress=127.0.0.1 connectport=7860 connectaddress=<ip address of WSL you can get it by "ifconfig">
