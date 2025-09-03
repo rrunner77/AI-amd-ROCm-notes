@@ -15,6 +15,7 @@
 - pip3.12 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4/
 - pip3.12 install -r requirements.txt
 - python3.12 main.py --listen --use-pytorch-cross-attention
+With Flux models you can not use "--use-pytorch-cross-attention" the image will never be generated. Use "--use-split-cross-attention" or "--use-quad-cross-attention"
 
 On WLS:
 - cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60402 comfy-env/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
