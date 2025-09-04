@@ -15,7 +15,12 @@
 - pip3.12 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4/
 - pip3.12 install -r requirements.txt
 - python3.12 main.py --listen --use-pytorch-cross-attention
-With Flux models you can not use "--use-pytorch-cross-attention" the image will never be generated. Use "--use-split-cross-attention" or "--use-quad-cross-attention"
+With Flux/WAN models you can not use "--use-pytorch-cross-attention" the image will never be generated, in case of WAN the decode will never finish(I run out of patiente). Use "--use-split-cross-attention" or "--use-quad-cross-attention"
+
+On Ubuntu:
+export HIP_VISIBLE_DEVICES=0 - this of course depends how many GPUs you have
+export HSA_OVERRIDE_GFX_VERSION=11.0.0 - this is based on the type of the AMD card which you have -> this one is for 7900XTX
+export TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1 - this seems to lower the requirement of VRAM like +40% - tested only with "--use-pytorch-cross-attention"
 
 On WLS:
 - cp /opt/rocm/lib/libhsa-runtime64.so.1.15.60402 comfy-env/lib/python3.10/site-packages/torch/lib/libhsa-runtime64.so
