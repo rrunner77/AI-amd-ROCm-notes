@@ -8,12 +8,17 @@ Prerequisities:
     Windows C++ CMake Tools
     Windows 11 SDK (10.0.22621.0)
 
-- Must enable long paths in Winsows and git !!! git config --system core.longpaths true
-1. git clone https://github.com/ROCm/TheRock.git
-2. cd TheRock
-3. python -m venv .venv
-4. .venv\Scripts\Activate.bat
-5. pip install -r requirements.txt
-6. python ./build_tools/fetch_sources.py
-7. cmake -B build -GNinja . -DTHEROCK_AMDGPU_FAMILIES=gfx110X-dgpu
-8. cmake --build build
+- Must enable long paths in Winsows and git !!! git
+```
+  config --system core.longpaths true
+```
+```
+git clone https://github.com/ROCm/TheRock.git
+cd TheRock
+python -m venv .venv
+.venv\Scripts\Activate.bat
+pip install -r requirements.txt
+python ./build_tools/fetch_sources.py
+cmake -B build -GNinja . -DTHEROCK_AMDGPU_FAMILIES=gfx110X-dgpu
+cmake --build build
+```
