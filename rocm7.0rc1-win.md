@@ -8,7 +8,7 @@ Prerequisities:
     Windows C++ CMake Tools
     Windows 11 SDK (10.0.22621.0)
 
-- Must enable long paths in Winsows !!!
+- Must enable long paths in Winsows and git !!! git config --system core.longpaths true
 1. git clone https://github.com/ROCm/TheRock.git
 2. cd TheRock
 3. python -m venv .venv
