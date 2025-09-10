@@ -40,3 +40,11 @@ Build wheels
 python build_tools\build_python_packages.py --artifact-dir build\artifacts --dest-dir C:\ai\packages --version 7.0 --version-suffix rc1c
 pip install C:\ai\packages\dist\rocm-7.0.tar.gz C:\ai\packages\dist\rocm_sdk_core-7.0-py3-none-win_amd64.whl
 ```
+
+Build pytorch
+```
+python C:\ai\TheRock\external-builds\pytorch\pytorch_torch_repo.py checkout --repo C:/ai/p/pytorch
+python C:\ai\TheRock\external-builds\pytorch\pytorch_audio_repo.py checkout --repo C:/ai/p/audio
+python C:\ai\TheRock\external-builds\pytorch\pytorch_vision_repo.py checkout --repo C:/ai/p/vision
+python C:\ai\TheRock\external-builds\pytorch\pytorch_vision_repo.py checkout --repo C:/ai/p/vision
+```
