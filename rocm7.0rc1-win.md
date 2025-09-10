@@ -7,6 +7,7 @@ Prerequisities:
  Software:
 - Python 3.13 https://www.python.org/ftp/python/3.13.7/python-3.13.7-amd64.exe
 - Visual Studio 2022 https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false -- must be a clean install no double VCs
+
   with:
     MSVC v143 – VS 2022 C++ x64/x86 Build Tools
     v143 C++ ATL Build Tools
