@@ -1,3 +1,7 @@
+Links:
+https://github.com/ROCm/TheRock/blob/main/external-builds/pytorch/build_prod_wheels.py - pytorch
+https://github.com/ROCm/TheRock/blob/main/docs/development/windows_support.md
+
 Prerequisities:
  Software:
 - Python 3.13 https://www.python.org/ftp/python/3.13.7/python-3.13.7-amd64.exe
