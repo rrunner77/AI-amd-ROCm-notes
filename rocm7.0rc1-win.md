@@ -37,5 +37,5 @@ There should be a test :)
 
 Build wheels
 ```
-python build_tools\build_python_packages.py --artifact-dir build\artifacts --dest-dir C:\ai\packages
+python build_tools\build_python_packages.py --artifact-dir build\artifacts --dest-dir C:\ai\packages --version 7.0 --version-suffix rc1c
 ```
