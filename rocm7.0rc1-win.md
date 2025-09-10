@@ -38,4 +38,5 @@ There should be a test :)
 Build wheels
 ```
 python build_tools\build_python_packages.py --artifact-dir build\artifacts --dest-dir C:\ai\packages --version 7.0 --version-suffix rc1c
+pip install C:\ai\packages\dist\rocm-7.0.tar.gz C:\ai\packages\dist\rocm_sdk_core-7.0-py3-none-win_amd64.whl
 ```
