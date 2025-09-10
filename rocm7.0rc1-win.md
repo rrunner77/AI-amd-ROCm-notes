@@ -1,7 +1,8 @@
 Links:
-https://github.com/ROCm/TheRock/blob/main/external-builds/pytorch/build_prod_wheels.py - pytorch
 
-https://github.com/ROCm/TheRock/blob/main/docs/development/windows_support.md
+- https://github.com/ROCm/TheRock/blob/main/external-builds/pytorch/build_prod_wheels.py - pytorch
+- https://github.com/ROCm/TheRock/blob/main/docs/development/windows_support.md - compile on Win
+- https://github.com/ROCm/TheRock/blob/main/docs/packaging/python_packaging.md - build wheels
 
 Prerequisities:
  Software:
@@ -31,4 +32,10 @@ python ./build_tools/fetch_sources.py
 cmake -B build -GNinja . -DTHEROCK_AMDGPU_FAMILIES=gfx110X-dgpu
 cmake --build build --target therock-dist
 cmake --build build --target therock-archives
+```
+There should be a test :)
+
+Build wheels
+```
+python build_tools\build_python_packages.py --artifact-dir build\artifacts --dest-dir C:\ai\packages
 ```
