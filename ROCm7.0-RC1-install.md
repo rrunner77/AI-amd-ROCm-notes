@@ -3,7 +3,6 @@
 3. sudo apt install rocm
 4. install ComfyUI
 5. run venv
-6. pip3.12 install --pre \
-  --index-url https://rocm.nightlies.amd.com/v2/gfx110X-dgpu/ \
-  torch torchaudio torchvision --force-reinstall ---- https://github.com/ROCm/TheRock/blob/main/RELEASES.md#installing-pytorch-python-packages
-7. run comfyUI
+6. pip3.12 install --pre --index-url https://rocm.nightlies.amd.com/v2/gfx110X-dgpu/ torch torchaudio torchvision --force-reinstall
+   ---- https://github.com/ROCm/TheRock/blob/main/RELEASES.md#installing-pytorch-python-packages
+8. run comfyUI
