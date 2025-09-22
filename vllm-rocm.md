@@ -25,9 +25,9 @@ tp=1
 dtype=auto
 kv_cache_dtype=auto
 max_num_seqs=512  
-max_seq_len_to_capture=32768
-max_num_batched_tokens=32768
-max_model_len=2048
+max_seq_len_to_capture=128
+max_num_batched_tokens=2048
+max_model_len=8192
 ```
 Run vllm inside the docker
 ```
