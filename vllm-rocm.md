@@ -22,9 +22,9 @@ Parameters which work with 7900XTX (most problematic is the caches which increas
 ```
 model=Qwen/Qwen3-8B
 tp=1
-dtype=auto
-kv_cache_dtype=auto
-max_num_seqs=512  
+dtype=float16
+kv_cache_dtype=float16
+max_num_seqs=32  
 max_seq_len_to_capture=128
 max_num_batched_tokens=2048
 max_model_len=8192
