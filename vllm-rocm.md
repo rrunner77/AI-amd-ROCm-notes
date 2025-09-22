@@ -29,7 +29,6 @@ max_seq_len_to_capture=128
 max_num_batched_tokens=2048
 max_model_len=8192
 swap_space=16
-max_batch_size=16
 ```
 Run vllm inside the docker
 ```
@@ -41,7 +40,5 @@ vllm serve $model   \
 --max-seq-len-to-capture $max_seq_len_to_capture     \
 --max-num-batched-tokens $max_num_batched_tokens     \
 --max-model-len $max_model_len   \
---swap-space $swap_space \
---max-batch-size $max_batch_size \
---disable-sampling
+--swap-space $swap_space
 ```
