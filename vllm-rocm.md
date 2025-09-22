@@ -18,7 +18,7 @@ Parameters which work with 7900XTX (most problematic is the caches which increas
 - max_num_seqs => It specifies the maximum number of sequences (e.g., prompts, input texts, or batches of tokens) that the model can process simultaneously. - personal use 16-32 on a consumer GPU
 - max_seq_len_to_capture => This parameter ensures that the model only processes sequences up to a certain length, balancing speed  - on consumer GPU: 20–50
 - max_num_batched_tokens => It specifies the maximum total number of tokens (across all sequences in a batch) that the model can process at once. - personal use -> 1024–2048 on a consumer GPU
-- max_model_len => should be set to model len -> if you have VRAM :)
+- max_model_len => should be set to model len -> does not have impact on VRAM
 ```
 model=Qwen/Qwen3-8B
 tp=1
