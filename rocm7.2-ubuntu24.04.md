@@ -34,14 +34,15 @@ pip install packaging
 FLASH_ATTENTION_TRITON_AMD_ENABLE="TRUE" python setup.py install
 pip install sageattention
 
+--------------------
 Flash Attention File Replacement
-
+--------------------
 Replace the following file in myvenv/lib/python3.12/site-packages/flash_attn/utils/:
 
   [distributed.py](https://github.com/patientx/ComfyUI-Zluda/tree/master/comfy/customzluda/fa/distributed.py)
-
+--------------------
 SageAttention File Replacements
-
+--------------------
 Replace the following files in myvenv/lib/python3.12/site-packages/sageattention/:
 
   [attn_qk_int8_per_block.py](https://github.com/patientx/ComfyUI-Zluda/blob/master/comfy/customzluda/sa/attn_qk_int8_per_block.py)
