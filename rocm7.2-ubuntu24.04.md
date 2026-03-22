@@ -38,6 +38,7 @@ pip install sageattention
 Flash Attention File Replacement
 --------------------
 Replace the following file in myvenv/lib/python3.12/site-packages/flash_attn/utils/:
+
 [distributed.py](https://github.com/patientx/ComfyUI-Zluda/tree/master/comfy/customzluda/fa/distributed.py)
 
 --------------------
