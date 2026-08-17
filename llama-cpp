@@ -1,1 +1,3 @@
+sudo apt install amdrocm-core-dev7.14-gfx1100
+sudo echo /opt/rocm/lib | sudo tee /etc/ld.so.conf.d/rocm.conf && sudo ldconfig
 CMAKE_ARGS="-DGGML_HIP=ON -DAMDGPU_TARGETS=gfx1100 -DCMAKE_C_COMPILER=/opt/rocm/llvm/bin/clang -DCMAKE_CXX_COMPILER=/opt/rocm/llvm/bin/clang++ -DLLAMA_FLASH_ATTN=on"   .venv/bin/pip install --force-reinstall --no-cache-dir --no-binary llama-cpp-python llama-cpp-python
