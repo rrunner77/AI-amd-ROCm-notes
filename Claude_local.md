@@ -1,11 +1,12 @@
 ## How to run claude-cli with ollama backend
 
+```
 export ANTHROPIC_BASE_URL=http://localhost:11434/v1
 export CLAUDE_CODE_MAX_OUTPUT_TOKENS=128000
 export PATH="$HOME/.local/bin:$PATH"
-export ANTHROPIC_BASE_URL=http://localhost:11434/v1
 
 ollama launch claude
+```
 
 - Best model was the Qwen 3.8 27B
 
